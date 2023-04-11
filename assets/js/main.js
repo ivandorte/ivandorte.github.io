@@ -185,7 +185,7 @@
 		}
 
 	// Events.
-		var resizeTimeout, resizeScrollTimeout;
+		var resizeTimeout;
 
 		$window
 			.on('resize', function() {
@@ -199,7 +199,7 @@
 
 					// Update scrolly links.
 						$('a[href^="#"]').scrolly({
-							speed: 1500,
+							speed: 750,
 							offset: $header.outerHeight() - 1
 						});
 
