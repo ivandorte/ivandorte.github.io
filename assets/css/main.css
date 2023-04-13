@@ -1622,6 +1622,23 @@ body.is-touch .main {
 
 }
 
+#centered_icon {
+	padding-top: 16px;
+	width: 25%; 
+	margin: auto;
+	text-align: center;
+}
+  
+#centered_label {
+	width: 25%; 
+	margin: auto;
+	margin-bottom: 16px;
+	/* Optional Styling */
+	border-radius: 20px;
+	background-color: lemonchiffon;
+	text-align: center;
+}
+
 /* Footer */
 
 #footer {
