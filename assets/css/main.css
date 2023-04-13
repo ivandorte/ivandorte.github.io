@@ -97,7 +97,6 @@ video {
 	text-decoration: none !important;
 }
 
-
 .caption {
 	margin: 0;
 	padding: 0;
@@ -1174,14 +1173,17 @@ table.default tfoot {
 
 .poptrox-popup .nav-next:before,
 .poptrox-popup .nav-previous:before {
-	content: '';
-	display: block;
+	display: flex;
 	position: absolute;
+	font-family: FontAwesome;
+	content: "\f105";
 	top: calc(50% - 1.5em);
 	width: 40px;
 	height: 40px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
 	box-shadow: inset 0 0 0 2px transparent;
-	background: url("images/poptrox-nav.svg") center center;
 	background-color: #39454b;
 	color: #ffffff !important;
 }
@@ -1227,26 +1229,18 @@ table.default tfoot {
 	-ms-transition: opacity 0.2s ease-in-out;
 	transition: opacity 0.2s ease-in-out;
 	position: absolute;
-	top: 0;
-	right: 0;
-	width: 64px;
-	height: 64px;
-	text-indent: -9999px;
+	font-family: FontAwesome;
+	content: "\f00d";
 	z-index: 2;
-	opacity: 0;
-	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-}
-
-.poptrox-popup .closer:before {
-	content: '';
-	display: block;
+	display: inline-flex;
 	position: absolute;
-	right: -40px;
-	top: 0px;
 	width: 40px;
 	height: 40px;
+	right: -40px;
+	top: 0px;
+	justify-content: center;
+	align-items: center;
 	box-shadow: inset 0 0 0 2px transparent;
-	background: url("images/poptrox-closer.svg") center center;
 	background-color: #EB5353;
 	color: #ffffff !important;
 }
@@ -1270,11 +1264,11 @@ body.is-touch .poptrox-popup .closer {
 
 	.poptrox-popup .nav-next:before,
 	.poptrox-popup .nav-previous:before {
-		display: block;
+		display: flex;
 		position: absolute;
 		top: calc(50% - 1.5em);
-		width: 20px;
-		height: 20px;
+		width: 25px;
+		height: 25px;
 		background-size: contain;
 	}
 
@@ -1294,11 +1288,11 @@ body.is-touch .poptrox-popup .closer {
 		left: 0px;
 	}
 
-	.poptrox-popup .closer:before {
+	.poptrox-popup .closer {
 		right: 0px;
 		top: 0px;
-		width: 20px;
-		height: 20px;
+		width: 25px;
+		height: 25px;
 		box-shadow: inset 0 0 0 1px transparent;
 		background-color: #EB5353;
 		color: #ffffff !important;
@@ -1628,6 +1622,23 @@ body.is-touch .main {
 
 }
 
+#centered_icon {
+	padding-top: 16px;
+	width: 25%; 
+	margin: auto;
+	text-align: center;
+}
+  
+#centered_label {
+	width: 25%; 
+	margin: auto;
+	margin-bottom: 16px;
+	/* Optional Styling */
+	border-radius: 20px;
+	background-color: lemonchiffon;
+	text-align: center;
+}
+
 /* Footer */
 
 #footer {
@@ -1672,7 +1683,7 @@ body.is-touch .main {
 	border-left-color: rgba(185, 186, 187, 0.2);
 	font-size: 0.9em;
 }
-
+  
 @media screen and (max-width: 1000px) {
 
 	#footer {
