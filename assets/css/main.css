@@ -1622,11 +1622,14 @@ body.is-touch .main {
 
 }
 
+/* This website is under construction! */
+
 #centered_icon {
 	padding-top: 16px;
 	width: 25%; 
 	margin: auto;
 	text-align: center;
+	font-size: xx-large;
 }
   
 #centered_label {
@@ -1637,6 +1640,22 @@ body.is-touch .main {
 	border-radius: 20px;
 	background-color: lemonchiffon;
 	text-align: center;
+	font-size: large;
+	line-height: 2.5em;
+}
+
+@media screen and (max-width: 1080px) {
+
+	#centered_icon {
+		width: 50%; 
+		font-size: x-large;
+	}
+	  
+	#centered_label {
+		line-height: 1.5em;
+		font-size: small;
+	}
+
 }
 
 /* Footer */
