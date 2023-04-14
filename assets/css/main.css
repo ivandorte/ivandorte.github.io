@@ -435,17 +435,17 @@ body.is-preload *:after {
 @-moz-keyframes overlay-hide {
 	0% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	15% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	99% {
 		opacity: 0;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	100% {
@@ -457,17 +457,17 @@ body.is-preload *:after {
 @-webkit-keyframes overlay-hide {
 	0% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	15% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	99% {
 		opacity: 0;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	100% {
@@ -479,17 +479,17 @@ body.is-preload *:after {
 @-ms-keyframes overlay-hide {
 	0% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	15% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	99% {
 		opacity: 0;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	100% {
@@ -501,17 +501,17 @@ body.is-preload *:after {
 @keyframes overlay-hide {
 	0% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	15% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	99% {
 		opacity: 0;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	100% {
@@ -587,7 +587,7 @@ body.is-preload:after {
 	-ms-animation: none !important;
 	animation: none !important;
 	opacity: 1;
-	z-index: 100000;
+	z-index: 100001;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2) {
