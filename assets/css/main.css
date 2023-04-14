@@ -435,17 +435,17 @@ body.is-preload *:after {
 @-moz-keyframes overlay-hide {
 	0% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	15% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	99% {
 		opacity: 0;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	100% {
@@ -457,17 +457,17 @@ body.is-preload *:after {
 @-webkit-keyframes overlay-hide {
 	0% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	15% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	99% {
 		opacity: 0;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	100% {
@@ -479,17 +479,17 @@ body.is-preload *:after {
 @-ms-keyframes overlay-hide {
 	0% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	15% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	99% {
 		opacity: 0;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	100% {
@@ -501,17 +501,17 @@ body.is-preload *:after {
 @keyframes overlay-hide {
 	0% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	15% {
 		opacity: 1;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	99% {
 		opacity: 0;
-		z-index: 100000;
+		z-index: 100001;
 	}
 
 	100% {
@@ -587,7 +587,7 @@ body.is-preload:after {
 	-ms-animation: none !important;
 	animation: none !important;
 	opacity: 1;
-	z-index: 100000;
+	z-index: 100001;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2) {
@@ -1622,11 +1622,14 @@ body.is-touch .main {
 
 }
 
+/* This website is under construction! */
+
 #centered_icon {
 	padding-top: 16px;
 	width: 25%; 
 	margin: auto;
 	text-align: center;
+	font-size: xx-large;
 }
   
 #centered_label {
@@ -1637,6 +1640,22 @@ body.is-touch .main {
 	border-radius: 20px;
 	background-color: lemonchiffon;
 	text-align: center;
+	font-size: large;
+	line-height: 2.5em;
+}
+
+@media screen and (max-width: 1080px) {
+
+	#centered_icon {
+		width: 50%; 
+		font-size: x-large;
+	}
+	  
+	#centered_label {
+		line-height: 1.5em;
+		font-size: small;
+	}
+
 }
 
 /* Footer */
