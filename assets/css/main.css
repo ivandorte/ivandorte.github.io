@@ -1638,8 +1638,7 @@ body.is-touch .main {
 	margin-bottom: 16px;
 	/* Optional Styling */
 	text-align: center;
-	font-size: large;    
-	text-decoration:overline 3px #ffd700 !important;
+	font-size: large;
 }
 
 @media screen and (max-width: 1080px) {
