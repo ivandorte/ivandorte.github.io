@@ -19,7 +19,7 @@ var expandedAttribution = new ol.control.Attribution({
 });
 
 var map = new ol.Map({
-    controls: ol.control.defaults({attribution:false}).extend([
+    controls: ol.control.defaults.defaults({attribution:false}).extend([
         expandedAttribution
     ]),
     target: document.getElementById('map'),
