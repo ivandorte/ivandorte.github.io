@@ -7,16 +7,13 @@
 
   <title>GeoJSON tutorial - Leaflet</title>
 
-  <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-  <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+  <script src="./src/rbush/rbush.js"></script>
+  <script src="./src/Leaflet.LayerGroup.Collision.js"></script>
+  <script src="./src/L.Control.Button.js"></script>
 
   <style>
     html,
@@ -30,18 +27,20 @@
       height: 100%;
     }
 
-    .text_cluster div {
-      width: 40px;
-      height: 40px;
+    .text-label {
+      position: relative;
+      left: 5px;
       display: inline-block;
-      padding: 2px;
-      border-style: solid;
-      border-color: rgba(47, 79, 79, 1.0);
-      background-color: rgba(255, 255, 255, 0.6);
-      color: rgba(47, 79, 79, 1.0);
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
+      text-shadow: 1px 0 0 rgb(255, 255, 255), 0 1px 0 rgb(255, 255, 255), -1px 0 0 rgb(255, 255, 255), 0 -1px 0 rgb(255, 255, 255);
+      border: 1px solid #0000;
+      background: #0000;
+      white-space: nowrap;
+    }
+
+    .leaflet-div-icon {
+      background: #ff00009b;
+      border: 1px solid #ff00009b;
+      border-radius: 50%;
     }
   </style>
 
@@ -88,32 +87,33 @@
       });
     }
 
-    var markerGroup = new L.MarkerClusterGroup({
-      maxClusterRadius: 120,
-      spiderfyOnMaxZoom: false,
-      showCoverageOnHover: false,
-      zoomToBoundsOnClick: false,
+    var collisionLayer = L.layerGroup.collision({ margin: 5 });
+    for (var i = 0; i < geo_texts.features.length; i++) {
+      var f = geo_texts.features[i];
+      var coords = f.geometry.coordinates;
+      var marker = L.marker([coords[1], coords[0]], {
+        icon: L.divIcon({
+          html: "<div class=text-label>" +
+            f.properties.text +
+            "</div>",
+          iconSize: 3
 
-    });
-
-    var gas_labels = L.geoJSON(geo_texts, {
-      pointToLayer: function (f, latlng) {
-        return L.circleMarker(latlng, {
-          radius: 2.3,
-          color: 'red',
-          opacity: 0.75,
-        });
-      },
-      onEachFeature: text_style
-    });
-
-    markerGroup.addLayer(gas_labels);
-    map.addLayer(markerGroup);
+        }), interactive: true, clickable: true
+      });
+      add_popup(f, marker);
+      collisionLayer.addLayer(marker);
+    }
+    collisionLayer.addTo(map);
 
     var gas_lines = L.geoJSON(geo_lines, {
       onEachFeature: gas_style,
     }).addTo(map);
 
+    var button = new L.Control.Button('Sample data');
+    button.addTo(map);
+    button.on('click', function () {
+      window.open('https://github.com/ivandorte/pdf-to-vect-utilities-sample', '_blank');
+    });
     map.fitBounds(gas_lines.getBounds());
 
   </script>
