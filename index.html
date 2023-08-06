@@ -14,6 +14,21 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
+	<style>
+		.transbutton {
+			border: none;
+			cursor: pointer;
+			appearance: none;
+			background-color: inherit;
+			transition: transform .7s ease-in-out;
+
+		}
+
+		.transbutton:hover {
+			transform: rotate(360deg);
+
+		}
+	</style>
 </head>
 
 <body class="is-preload">
@@ -24,8 +39,8 @@
 		<nav>
 			<ul>
 				<li><a href="#intro">Intro</a></li>
-				<li><a href="#one">Chi sono</a></li>
-				<li><a href="#work">Progetti personali</a></li>
+				<li><a href="#one">Who I Am</a></li>
+				<li><a href="#work">My Work</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -36,34 +51,53 @@
 			<header>
 				<h2>Ivan D'Ortenzio</h2>
 			</header>
-			<p><strong>Esperto GIS</strong></p>
-			<p><strong>GIS | Cartografia | Data Analysis | Geo-Python | Spatial SQL</strong></p>
+			<p><strong>GIS Expert</strong></p>
+			<p><strong>GIS | Cartography | Data Analysis | Geo-Python | Spatial SQL</strong></p>
 		</div>
 	</section>
+
+	<script>
+		function doTranslate() {
+			var whoiam_text = document.getElementById("text_translate");
+			var trans_bt = document.getElementById("bt_image");
+			if (trans_bt.alt === "ITA") {
+				trans_bt.src = "images/buttons/en.svg"
+				trans_bt.alt = "EN"
+				whoiam_text.innerHTML = "Geology graduate/GIS expert with professional and academic experience in the geospatial industry. Extensive knowledge of open source GIS technologies like QGIS, PostgreSQL 🐘, Python, and proprietary technologies like ArcMap, ArcGIS Pro, ArcGIS Online, ModelBuilder and Arcpy. Looking for a job in geospatial (GIS/EO) or Engineering/Analysis/Data Science.";
+			} else {
+				trans_bt.src = "images/buttons/ita.svg"
+				trans_bt.alt = "ITA"
+				whoiam_text.innerHTML = "Laureato in Geologia/esperto GIS con esperienza professionale e accademica nel settore geospaziale. Solida esperienza nell'uso di tecnologie geospaziali open source come QGIS, PostgreSQL 🐘, Python e tecnologie proprietarie come ArcMap, ArcGIS Pro, ArcGIS Online, ModelBuilder e Arcpy. In cerca di lavoro nel settore geospaziale o dell'Ingegneria/Analisi/Scienza dei Dati.";
+			}
+		}
+	</script>
 
 	<!-- One -->
 	<section id="one" class="main style2 left dark fullscreen">
 		<div class="content box style2">
 			<header>
-				<h2>Chi sono</h2>
+				<h2>Who I Am</h2>
 			</header>
-			<p>
-				Laureato in Geologia/esperto GIS con esperienza professionale e accademica nel settore geospaziale.
-				Solida esperienza nell'uso di tecnologie geospaziali open source come QGIS, PostgreSQL 🐘,
-				Python e tecnologie proprietarie come ArcMap, ArcGIS Pro, ArcGIS Online, ModelBuilder e Arcpy. In cerca
-				di lavoro nel settore geospaziale o dell'Ingegneria/Analisi/Scienza dei Dati.
+			<button id="bt_translate" class="transbutton" onclick="doTranslate()"><img id="bt_image"
+					src="images/buttons/en.svg" alt="EN" width=20px height="20px" /></button>
+			<p id="text_translate">
+				Geology graduate/GIS expert with professional and academic experience in the geospatial industry.
+				Extensive knowledge of open source GIS technologies like QGIS, PostgreSQL 🐘, Python,
+				and proprietary technologies like ArcMap, ArcGIS Pro, ArcGIS Online, ModelBuilder and Arcpy.
+				Looking for a job in geospatial (GIS/EO) or Engineering/Analysis/Data Science.
 			</p>
-			<h1>Puoi contattarmi su</h1>
+			<h1>Contacts</h1>
 			<li>
-				<a href="mailto: ivandorte@gmail.com"> <i class="icon fa-at"></i> 
+				<a href="mailto: ivandorte@gmail.com"> <i class="icon fa-at"></i>
 					<span class="ml-1">Gmail</span>
 				</a>
 			</li>
 			<li>
-				<a href="https://www.linkedin.com/in/ivan-d-ortenzio/" target="_blank"> <i class="icon brands fa-linkedin-in"></i> 
+				<a href="https://www.linkedin.com/in/ivan-d-ortenzio/" target="_blank"> <i
+						class="icon brands fa-linkedin-in"></i>
 					<span class="ml-1">LinkedIn</span>
 				</a>
-			</li>		
+			</li>
 		</div>
 	</section>
 
@@ -71,23 +105,37 @@
 	<section id="work" class="main style3 primary">
 		<div class="content">
 			<header>
-				<h2>Progetti personali</h2>
+				<h2>My Work</h2>
 			</header>
 			<div class="gallery">
-				<a href="images/fulls/14.jpg"><img src="images/thumbs/14.jpg" title="SatGPT is an experimental project that uses LLMs to retrieve Sentinel 2/Landsat imagery based on the user's requested area and time of interest in natural language.<a href='https://github.com/lalligagger/satgpt-app' target='_blank' class='icon brands fa-github' style='color:black'></a> <a href='https://www.youtube.com/watch?v=r-gO47Y8q_k' target='_blank' class='icon brands fa-youtube' style='color:black'></a>" /></a>
-				<a href="images/fulls/13.jpg"><img src="images/thumbs/13.jpg" title="Una raccolta di notebooks e applicazioni (Python) relative al settore dell'Osservazione della Terra (OT/EO) <a href='https://github.com/ivandorte/eo-notebooks-apps' target='_blank' class='icon brands fa-github' style='color:black'></a>" /></a>
-				<a href="images/fulls/12.jpg"><img src="images/thumbs/12.jpg" title="Una semplice dashboard che permette di monitorare le flotte di veicoli ATAC e Roma TPL operanti nella Città metropolitana di Roma Capitale <a href='https://github.com/ivandorte/Rome-in-transit' target='_blank' class='icon brands fa-github' style='color:black'></a>" /></a>
-				<a href="images/fulls/11.jpg"><img src="images/thumbs/11.jpg" title="Flussi di pendolarismo per motivi di studio o lavoro tra le regioni Italiane <a href='https://github.com/ivandorte/panel-commuting-istat' target='_blank' class='icon brands fa-github' style='color:black'></a>" /></a>
-				<a href="images/fulls/10.jpg"><img src="images/thumbs/10.jpg" title="Analisi e visualizzazione di tweet geolocalizzati per il Centro Storico di Roma <a href='https://github.com/ivandorte/panel-geodashboard-twitter' target='_blank' class='icon brands fa-github' style='color:black'></a>" /></a>
-				<a href="images/fulls/09.jpg"><img src="images/thumbs/09.jpg" title="Mappa bivariata che mette in relazione la copertura vaccinale con il numero di decessi nell'Eurozona - Monitoraggio vaccini Italia <a href='https://enricocid.github.io/monitoraggio-vaccini-italia/' target='_blank' class='fas fa-virus' style='color:black'></a>" /></a>
-				<a href="images/fulls/08.jpg"><img src="images/thumbs/08.jpg" title="Presenze medie e caratteristiche socio-anagrafiche della popolazione gravitante nel Centro Storico di Roma - Dashboard sviluppata per ESRI Italia nell'ambito del progetto AMOR <a href='https://business.esa.int/projects/amor' target='_blank' class='fas fa-external-link-alt' style='color:black'></a>" /></a>
-				<a href="images/fulls/07.jpg"><img src="images/thumbs/07.jpg" title="Alcuni risultati relativi all'analisi esplorativa (ESDA) condotta su dati storici di mobilità umana nell'ambito del progetto AMOR <a href='https://business.esa.int/projects/amor' target='_blank' class='fas fa-external-link-alt' style='color:black'></a>" /></a>
-				<a href="images/fulls/06.jpg"><img src="images/thumbs/06.jpg" title="Qui puoi trovare tutto il materiale (script, dati...) utilizzato per generare le mappe per il #30DayMapChallenge del 2021 <a href='https://github.com/ivandorte/30DayMapChallenge_2021' target='_blank' class='icon brands fa-github' style='color:black'></a>" /></a>
-				<a href="images/fulls/05.jpg"><img src="images/thumbs/05.jpg" title="Una raccolta di snippet utili per chi lavora nel settore geospaziale (e non solo) <a href='https://github.com/ivandorte/python_gis' target='_blank' class='icon brands fa-github' style='color:black'></a>" /></a>
-				<a href="images/fulls/04.jpg"><img src="images/thumbs/04.jpg" title="Questa Heatmap (mappa di calore) mostra le aree e le strade piu frequentate nel Centro Storico di Roma <a href='https://github.com/ivandorte/python_gis/blob/main/Holoviz/02_datashader_osm.ipynb' target='_blank' class='icon brands fa-python' style='color:black'></a>" /></a>
-				<a href="images/fulls/03.jpg"><img src="images/thumbs/03.jpg" title="Tratteggio digitale (digital hachures) generato automaticamente a partire dalle curve di livello, dalla carta delle pendenze e dell'esposizione (Mayon Volcano)" /></a>
-				<a href="images/fulls/02.jpg"><img src="images/thumbs/02.jpg" title="Workflow semplificato per l'estrazione di livelli vettoriali da planimetrie della rete di distribuzione del gas in formato PDF <a href='https://ivandorte.github.io/webmaps/mappa25-gas-rieti/index.html' target='_blank' class='fas fa-external-link-alt' style='color:black'></a>" /></a>
-				<a href="images/fulls/01.jpg"><img src="images/thumbs/01.jpg" title="Il mio primo incontro con i GIS (Esercitazione di Cartografia Tematica - UNISI, giu. 2013)" /></a>
+				<a href="images/fulls/14.jpg"><img src="images/thumbs/14.jpg"
+						title="SatGPT is an experimental project that uses LLMs to retrieve Sentinel 2/Landsat imagery based on the user's requested area and time of interest in natural language.<a href='https://github.com/lalligagger/satgpt-app' target='_blank' class='icon brands fa-github' style='color:black'></a> <a href='https://www.youtube.com/watch?v=r-gO47Y8q_k' target='_blank' class='icon brands fa-youtube' style='color:black'></a>" /></a>
+				<a href="images/fulls/13.jpg"><img src="images/thumbs/13.jpg"
+						title="A collection of Python notebooks and applications related to Earth Observation (EO) sector. <a href='https://github.com/ivandorte/eo-notebooks-apps' target='_blank' class='icon brands fa-github' style='color:black'></a>" /></a>
+				<a href="images/fulls/12.jpg"><img src="images/thumbs/12.jpg"
+						title="This dashboard displays the near real-time position of any bus, tram, or train (ATAC and Roma TPL operators) within the Metropolitan City of Rome.<a href='https://github.com/ivandorte/Rome-in-transit' target='_blank' class='icon brands fa-github' style='color:black'></a>" /></a>
+				<a href="images/fulls/11.jpg"><img src="images/thumbs/11.jpg"
+						title="A simple Panel dashboard showing Incoming and Outgoing commuting flows (Work and Study) between Italian Regions. <a href='https://github.com/ivandorte/panel-commuting-istat' target='_blank' class='icon brands fa-github' style='color:black'></a>" /></a>
+				<a href="images/fulls/10.jpg"><img src="images/thumbs/10.jpg"
+						title="A Panel-based dashboard visualizing geotagged tweets with hvplot, Datashader and Echarts. <a href='https://github.com/ivandorte/panel-geodashboard-twitter' target='_blank' class='icon brands fa-github' style='color:black'></a>" /></a>
+				<a href="images/fulls/09.jpg"><img src="images/thumbs/09.jpg"
+						title="Bivariate map of the association between vaccination rates and COVID-19 deaths in EU27 - Monitoraggio vaccini Italia <a href='https://enricocid.github.io/monitoraggio-vaccini-italia/' target='_blank' class='fas fa-virus' style='color:black'></a>" /></a>
+				<a href="images/fulls/08.jpg"><img src="images/thumbs/08.jpg"
+						title="Average footfall volume and socio-demographic profile of the population graviting in the Historic Center of Rome - Dashboard developed for ESRI Italy as part of the AMOR project <a href='https://business.esa.int/projects/amor' target='_blank' class='fas fa-external-link-alt' style='color:black'></a>" /></a>
+				<a href="images/fulls/07.jpg"><img src="images/thumbs/07.jpg"
+						title="Exploratory Spatial Data Analysis (ESDA) performed on historical human mobility data as part of the AMOR project <a href='https://business.esa.int/projects/amor' target='_blank' class='fas fa-external-link-alt' style='color:black'></a>" /></a>
+				<a href="images/fulls/06.jpg"><img src="images/thumbs/06.jpg"
+						title="Repository with scripts and data used for the #30DayMapChallenge - 2021 <a href='https://github.com/ivandorte/30DayMapChallenge_2021' target='_blank' class='icon brands fa-github' style='color:black'></a>" /></a>
+				<a href="images/fulls/05.jpg"><img src="images/thumbs/05.jpg"
+						title="Collection of short geospatial scripts and more.... <a href='https://github.com/ivandorte/python_gis' target='_blank' class='icon brands fa-github' style='color:black'></a>" /></a>
+				<a href="images/fulls/04.jpg"><img src="images/thumbs/04.jpg"
+						title="Heatmap of OpenStreetMap public GPS traces for the Historic Center of Rome <a href='https://github.com/ivandorte/python_gis/blob/main/Holoviz/02_datashader_osm.ipynb' target='_blank' class='icon brands fa-python' style='color:black'></a>" /></a>
+				<a href="images/fulls/03.jpg"><img src="images/thumbs/03.jpg"
+						title="Automatic depiction of digital hatchures from digital elevation models." /></a>
+				<a href="images/fulls/02.jpg"><img src="images/thumbs/02.jpg"
+						title="Simplified workflow for extracting vector layers from PDF utility maps <a href='https://ivandorte.github.io/webmaps/mappa25-gas-rieti/index.html' target='_blank' class='fas fa-external-link-alt' style='color:black'></a>" /></a>
+				<a href="images/fulls/01.jpg"><img src="images/thumbs/01.jpg"
+						title="My first encounter with GIS (cartography course - UNISI, Jun. 2013)" /></a>
 			</div>
 		</div>
 	</section>
@@ -115,7 +163,8 @@
 
 		<!-- Menu -->
 		<ul class="menu">
-			<li>Copyright © 2023 Ivan D'Ortenzio | Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+			<li>Copyright © 2023 Ivan D'Ortenzio | Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a>
+			</li>
 		</ul>
 
 	</footer>

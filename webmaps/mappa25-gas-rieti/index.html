@@ -42,12 +42,20 @@
       border: 1px solid #ff00009b;
       border-radius: 50%;
     }
+
+    .map-key-img {
+      position: absolute;
+      right: 10px;
+      bottom: 25px;
+      z-index: 999;
+    }
   </style>
 
 </head>
 
-<body>
 
+<body>
+  <div class="map-key-img"><img src="./images/map-key.png" width="110" height="305"/></div>
   <div id='map'></div>
 
   <script src="./layers/01_texts.js" type="text/javascript"></script>
@@ -114,11 +122,10 @@
     button.on('click', function () {
       window.open('https://github.com/ivandorte/pdf-to-vect-utilities-sample', '_blank');
     });
+
     map.fitBounds(gas_lines.getBounds());
 
   </script>
-
-
 
 </body>
 
