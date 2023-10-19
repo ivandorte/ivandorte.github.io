@@ -1,0 +1,21 @@
+<div class="container-fluid justify-content-center my-5 px-0">
+
+  {% for account in site.author %}
+
+  {%- assign service_name = account[0] -%}
+  {%- assign service_data = site.data.socials[service_name] -%}
+  {%- if service_data -%}
+
+  <a href="{{ service_data.url }}{{ account[1] }}" target="_blank" rel="noopener noreferrer" data-bs-toggle="tooltip"
+    title="{{service_data.name}}" style="text-decoration: none;">
+    <span class="fa-stack fa-1x mx-1 fa-themed" onmouseover="style.color='#{{ service_data.color }}'"
+      onmouseout="style.color='var(--fa-bg)'">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa {{ service_data.icon }} fa-stack-1x text-themed" onmouseover="style.color='whitesmoke'"
+        onmouseout="style.color='var(--social-icon)'"></i>
+    </span>
+  </a>
+  {%- endif -%}
+
+  {% endfor %}
+</div>

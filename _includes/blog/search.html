@@ -1,0 +1,20 @@
+<!-- Simple-Jekyll-Search https://github.com/christian-fei/Simple-Jekyll-Search -->
+
+<div class="input-group input-group-lg mt-5 px-3">
+  <button class="btn btn-outline-primary" type="button" onclick="location.href = '{{ '/blog/tags' | relative_url }}';"><i class="fa fa-tags"></i></button>
+  <input id="search-input" type="search" class="form-control text-themed" placeholder="Search posts..." aria-label="Search posts..." aria-describedby="button-addon1">
+</div>
+
+<ul class="px-3 list-group" id="results-container" style="padding: 16px;"></ul>
+
+<script
+  src="https://cdn.rawgit.com/christian-fei/Simple-Jekyll-Search/master/dest/simple-jekyll-search.min.js"></script>
+<script>
+   var sjs = SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        searchResultTemplate: '<a href="{url}" class="list-group-item list-group-item-action">{title}</a>',
+        noResultsText: '<li class="list-group-item list-group-item-action disabled">No results found</li>',
+        json: '{{ '/search.json' | relative_url }}'
+      })
+</script>

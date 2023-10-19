@@ -1,0 +1,32 @@
+.skills.card {
+  margin: 16px auto;
+  text-decoration: none !important;
+  overflow: hidden;
+  border-radius: 8px;
+  border-color: transparent;
+  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.12);
+
+  &:hover {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    background-color: $primary;
+    scale: 1.1;
+
+    .fa-circle {
+      color: $text-white;
+    }
+
+    .fa-solid {
+      color: $primary;
+    }
+
+    .card-title {
+      color: $text-white;
+    }
+
+    .badge {
+      color: $text-white;
+      background-color: transparentize($dark, $amount: 0.7);
+      font-weight: bold;
+    }
+  }
+}

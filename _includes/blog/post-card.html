@@ -1,0 +1,42 @@
+{%- comment -%} Determine Post URL {%- endcomment -%}
+{%- if post.external_url -%}
+{%- assign post_url = post.external_url -%}
+{%- else -%}
+{%- assign post_url = post.url | relative_url -%}
+{%- endif -%}
+
+<div class="col-lg-6 wow animated fadeIn" data-wow-delay=".15s">
+  <a href="{{ post_url }}" class="project card" {%- if post.external_url and site.open_new_tab -%} target="_blank" {%-
+    endif -%}>
+
+    <div class="card-body text-themed">
+      <h5 class="card-title" style="font-weight: bold;">
+        {%- if post.image-fa -%}
+        <span class="fa-stack fa-1x mx-1 fa-themed" onmouseout="style.color='var(--fa-bg)'">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa-solid {{ post.image-fa }} fa-stack-1x text-themed"></i>
+        </span>
+        {{ post.title }}
+        {%- else -%}
+        {{ post.title }}
+        {%- endif -%}
+      </h5>
+
+      <p class="card-text">
+        {%- if post.description -%}
+        {{ post.description }}
+        {%- else -%}
+        {{ post.content | truncatewords: 25, "<small><i> read more...</i></small>" }}
+        {%- endif -%}
+      </p>
+
+      {% for tag in post.tags %}
+      <span class="card-text badge text-themed m-1">{{ tag }}</span>
+      {% endfor %}
+    </div>
+
+    <div class="card-footer text-muted h-100">
+      {{ post.date | date_to_long_string }}
+    </div>
+  </a>
+</div>

@@ -1,0 +1,22 @@
+:root {
+  --fa-border-color: black;
+  --fa-bg: #f8f9fa;
+  --skill-hover: white;
+  --name-gradient: linear-gradient(120deg, aquamarine 0%, mediumturquoise 100%);
+  --social-icon: #343a40;
+}
+
+[data-theme="dark"] {
+  --fa-border-color: white;
+  --fa-bg: #343a40;
+  --skill-hover: black;
+  --name-gradient: linear-gradient(270deg, #13adc7 0%, #945dd6 100%);
+  --social-icon: #f8f9fa;
+}
+
+$primary: #4070f4;
+$secondary: #6c757d;
+$light: #f8f9fa;
+$dark: #343a40;
+$text-black: #343a40;
+$text-white: #f8f9fa;

@@ -1,0 +1,60 @@
+@mixin themed($property, $light-value, $dark-value) {
+  [data-theme="light"] & {
+    #{$property}: $light-value;
+  }
+
+  [data-theme="dark"] & {
+    #{$property}: $dark-value;
+  }
+}
+
+#theme-toggler:before {
+  @include themed(content, "🌚", "🌞");
+}
+
+.navbar-themed {
+  .navbar-brand,
+  .navbar-nav .nav-link.active {
+    @include themed(color, $text-black, $text-white);
+  }
+
+  .navbar-nav .nav-link {
+    @include themed(color, rgba($text-black, 0.5), rgba($text-white, 0.5));
+
+    &:hover {
+      @include themed(color, $text-black, $text-white);
+    }
+  }
+
+  .navbar-nav .nav-link.nav-link.r {
+    @include themed(color, $text-black, $text-white);
+  }
+}
+
+.text-themed {
+  @include themed(color, $text-black, $text-white);
+}
+
+.bg-themed {
+  @include themed(background-color, $light, $dark);
+}
+
+.badge {
+  @include themed(background-color, $light, $dark);
+}
+
+.fa-themed {
+  @include themed(color, $light, $dark);
+}
+
+.tooltip-inner {
+  margin: 4px auto;
+  @include themed(background-color, $text-black, $text-white);
+  @include themed(color, $text-white, $text-black);
+  box-shadow: 0px 0px 4px black;
+  opacity: 1 !important;
+}
+
+.tooltip-arrow {
+  visibility: hidden;
+}

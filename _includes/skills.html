@@ -1,0 +1,21 @@
+<h4 class="pt-5 pb-1" style="font-weight: bold;">{{ include.title }}</h4>
+<div class="row" data-masonry='{"percentPosition": true}'>
+  {% for skills_group in include.source %}
+  <div class="col-md-4 wow animated fadeIn" data-wow-delay=".15s">
+    <div class="card skills">
+      <div class="card-body text-center">
+        <span class="fa-stack fa-2x mx-1 text-primary" style="scale: 0.70;">
+          <i class="fa fa-circle fa-stack-2x"></i>
+          <i class="fa-solid {{ skills_group.icon }} fa-stack-1x fa-themed"></i>
+        </span>
+        <h4 class="card-title" style="font-weight: bold; pointer-events: none;">
+          {{ skills_group.category }}
+        </h4>
+        {% for skill in skills_group.skills %}
+        <span class="card-text badge text-themed m-1">{{ skill }}</span>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
