@@ -1,0 +1,62 @@
+- category: Programming
+  skills: [Python, SQL]
+  icon: fa-code
+
+- category: GIS
+  skills:
+    [
+      Geoprocessing,
+      GIS Workflows,
+      ArcMap,
+      ArcGIS Pro,
+      ArcGIS Dashboard,
+      ArcGIS Online,
+      ModelBuilder,
+      QGIS,
+      GIS,
+      Spatial Analysis,
+    ]
+  icon: fa-layer-group
+
+- category: EO/RS
+  skills: [Earth Observation, Remote Sensing, EO/RS techniques, ERDAS Imagine]
+  icon: fa-satellite
+
+- category: Databases
+  skills: [PostgreSQL + PostGIS, SQL Server + Spatial]
+  icon: fa-database
+
+- category: Geo-python
+  skills:
+    [
+      geopandas,
+      shapely,
+      fiona,
+      GDAL Python API & CLI,
+      rasterio,
+      pysal,
+      ipyleaflet,
+      arcpy,
+      pyqgis,
+    ]
+  icon: fa-earth-europe
+
+- category: Data Analysis & Visualization
+  skills:
+    [
+      pandas,
+      numpy,
+      numba,
+      xarray,
+      networkx,
+      matplolib,
+      Panel,
+      holoviz tools,
+      plotly,
+      Bokeh,
+    ]
+  icon: fa-chart-column
+
+- category: Code editors/IDEs
+  skills: [VS Code, Jupyter Notebooks, Eclipse, Spyder IDE]
+  icon: fa-laptop-code

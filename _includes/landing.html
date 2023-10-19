@@ -1,0 +1,41 @@
+<div class="row justify-content-center align-items-center p-4">
+  <div class="col col-md-6 text-center" style="vertical-align: center;">
+    <div id="container" class="my-2">
+      <h1 class="typed-text p-6 display-5">I'm <span class="highlighted-text"
+          style="text-transform: capitalize;">{{site.author.name}}</span></h1>
+
+      A geospatial enthusiast unleashing the potential of open source technologies to explore and understand the world
+      through maps.
+
+      <div class="spinner-wrapper">
+        <!-- Uses two spans to create an illusion of infinite spinning -->
+        <div class="spinner">
+          <h2 class="spinner-text p-4 mt-4" style="text-transform: uppercase; white-space: nowrap;"
+            data-texts="{{site.description}}"></h2>
+        </div>
+      </div>
+
+      {% include social.html %}
+
+    </div>
+  </div>
+
+  <script>
+
+    const spinnerText = document.querySelector('.spinner-text')
+    const texts = spinnerText.dataset.texts.split('|')
+
+    function initializeSpinnerTexts() {
+      texts.forEach((text, index) => {
+
+        spinnerText.innerText = texts[index].trim()
+
+        // Change text after every animation iteration
+        spinnerText.addEventListener('animationiteration', e => {
+          e.target.innerText = texts[++index % texts.length]
+        })
+      })
+    }
+
+    window.onload = initializeSpinnerTexts
+  </script>

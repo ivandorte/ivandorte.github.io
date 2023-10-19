@@ -1,0 +1,58 @@
+.project.card {
+  margin: 16px auto;
+  text-decoration: none !important;
+  overflow: hidden;
+  border-radius: 8px;
+
+  &:hover {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: -2px 8px 40px -12px rgba(0, 0, 0, 0.24);
+
+    .badge {
+      background-color: var(--fa-border-color);
+      color: var(--fa-bg);
+    }
+
+    .fa-stack-2x {
+      color: $primary;
+    }
+
+    .fa-solid {
+      color: $text-white;
+    }
+
+    .inner img {
+      transition: all 0.5s ease;
+      transform: scale(1.25);
+    }
+
+    .card-img-top {
+      filter: none;
+    }
+  }
+
+  .card-img-top {
+    width: 100%;
+    object-fit: cover;
+    padding: 0%;
+    filter: grayscale(75%);
+    overflow: hidden;
+
+    &:hover:not(.post) {
+      filter: none;
+    }
+  }
+}
+
+.inner {
+  overflow: hidden;
+}
+
+.project.card h5 {
+  transition: color 0.3s ease-out;
+}
+
+.project.card:hover h5,
+.project.card:focus h5 {
+  color: $primary;
+}

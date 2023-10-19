@@ -1,0 +1,76 @@
+### Site Settings ###
+title               : "Ivan D'Ortenzio"
+description         : "GIS | Cartography | Data Analysis | Geo-Python | Spatial SQL"
+collections_dir     : docs
+data_dir            : docs/_data
+baseurl             : "/"
+incremental         : true
+
+
+### Plugins ###
+plugins:
+  - jemoji
+
+
+### Navbar Settings ###
+nav_exclude:
+  - docs/pages/tags.html
+  - docs/pages/404.html
+  - docs/pages/index.md
+
+
+### Author Info ###
+author:
+  name              : ivan
+  image             : https://avatars.githubusercontent.com/u/1726395
+  # taken from: https://watershipfrown.tumblr.com/post/86524633118
+  image_alt         : "https://64.media.tumblr.com/c34e76d2944d00b251908a9082cc7650/tumblr_n5ywzcTz4U1rkljv1o1_500.gifv" 
+  github            : ivandorte
+  linkedin          : ivan-d-ortenzio
+  twitter           : ivanziogeo
+  email             : ivandorte@gmail.com
+
+
+### Posts ###
+permalink: /blog/:title
+
+
+### Collections ###
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name
+  elements:
+    output: true
+
+### Defaults for collections ###
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "elements"
+    values:
+      layout: "element"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: false
+
+plugins:
+  - jekyll-default-layout
+  - jekyll-gist
+  - jekyll-github-metadata
+  - jekyll-include-cache
+  - jemoji
+
+
+exclude:
+  - docs/Gemfile
+  - docs/Gemfile.lock
+  - docs/_site/
+  - docs/.sass-cache/

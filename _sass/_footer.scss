@@ -1,0 +1,28 @@
+/* footer link animation */
+.a-link {
+  text-decoration: none !important;
+  position: relative;
+
+  &:hover {
+    color: var(--fa-bg) !important;
+  }
+}
+
+.a-link::before {
+  content: "";
+  background-color: var(--fa-border-color);
+  position: absolute;
+  bottom: 1px;
+  border-radius: 2px;
+  object-position: center;
+  width: 100%;
+  height: 0px;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+.a-link:hover::before {
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,63 @@
+.link-after {
+  content: "";
+  display: block;
+  height: 0.15em;
+  margin-top: 5px;
+  background: $primary;
+}
+
+.navbar-avatar {
+  border-radius: 50%;
+  background-color: $primary;
+  &:hover {
+    cursor: default;
+    animation: pulse-animation 1s linear infinite;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px transparentize($primary, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+  }
+}
+
+.nav-item {
+  font-size: larger;
+  margin-left: 16px;
+}
+
+.link-after {
+  font-size: larger;
+}
+
+.nav-link,
+.navbar-brand {
+  &:hover {
+    font-weight: bold;
+  }
+
+  &::after {
+    @extend .link-after;
+    border-radius: 8px;
+    width: 100%;
+    transition: transform 0.5s ease;
+    transform: scaleX(0);
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+.nav-item.active {
+  font-weight: bolder;
+  color: black;
+  &::after {
+    @extend .link-after;
+    transform: scaleX(1) !important;
+  }
+}

@@ -1,0 +1,11 @@
+{% if include.block %}
+{%- assign block_style = "btn-block" -%}
+{%- else -%}
+{%- assign block_style = "" -%}
+{%- endif -%}
+
+<a class="m-4 btn btn-{{ include.style | default: 'outline-primary' }} btn-lg {{ block_style }} px-2 py-2"
+  href="{{ include.link | default: site.baseurl }}/">
+  <i class="fa-solid {{ include.icon | default: 'fa-circle-info' }}"></i>
+  {{ include.text | default: "Learn more" }}
+</a>
