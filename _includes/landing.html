@@ -8,7 +8,6 @@
       through maps.
 
       <div class="spinner-wrapper">
-        <!-- Uses two spans to create an illusion of infinite spinning -->
         <div class="spinner">
           <h2 class="spinner-text p-4 mt-4" style="text-transform: uppercase; white-space: nowrap;"
             data-texts="{{site.description}}"></h2>
@@ -26,15 +25,21 @@
     const texts = spinnerText.dataset.texts.split('|')
 
     function initializeSpinnerTexts() {
-      texts.forEach((text, index) => {
 
-        spinnerText.innerText = texts[index].trim()
+      let iterationCount = 0
+      spinnerText.innerText = texts[iterationCount].trim()
 
-        // Change text after every animation iteration
-        spinnerText.addEventListener('animationiteration', e => {
-          e.target.innerText = texts[++index % texts.length]
-        })
-      })
+      // Change text after every animation iteration
+      spinnerText.onanimationiteration = () => {
+
+        ++iterationCount
+
+        // Check if the new text actually exists, reset index accordingly
+        if (typeof texts[iterationCount] === "undefined") {
+          iterationCount = 0
+        }
+        spinnerText.innerText = texts[iterationCount].trim()
+      }
     }
 
     window.onload = initializeSpinnerTexts
