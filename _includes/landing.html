@@ -35,7 +35,7 @@
         ++iterationCount
 
         // Check if the new text actually exists, reset index accordingly
-        if (typeof texts[iterationCount] === "undefined") {
+        if (!texts[iterationCount]) {
           iterationCount = 0
         }
         spinnerText.innerText = texts[iterationCount].trim()
