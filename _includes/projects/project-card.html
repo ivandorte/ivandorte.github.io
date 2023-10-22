@@ -22,3 +22,13 @@
     </div>
   </a>
 </div>
+
+<script>
+  $("a").each(function (i) {
+    this.click(function (e) {
+      if (!this.href) {
+        e.preventDefault()
+      }
+    })
+  })
+</script>
