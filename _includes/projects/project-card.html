@@ -24,11 +24,14 @@
 </div>
 
 <script>
-  $("a").each(function (i) {
-    this.click(function (e) {
-      if (!this.href) {
-        e.preventDefault()
-      }
-    })
-  })
+  const links = document.querySelector('.a')
+  console.log(links)
+  function checkHREF() {
+      links.forEach((link, index) => {
+        if (!link.href) {
+          a.removeAttribute("href")
+        }
+      })
+    }
+  window.onload = checkHREF
 </script>
