@@ -15,7 +15,7 @@
   {%- assign project_url = project.external_url -%}
   {%- assign external = true -%}
   {%- else -%}
-  {%- assign project_url = project.url | relative_url -%}
+  {%- assign project_url = "" -%}
   {%- assign external = false -%}
   {%- endif -%}
 
@@ -24,3 +24,16 @@
   {% endfor %}
 
 </div>
+
+<!-- remove empty href tags -->
+<script>
+  const alinks = document.querySelectorAll('a.card')
+  function checkHREF() {
+    alinks.forEach((alink, index) => {
+      if (alink.getAttribute("href") == "") {
+        alink.removeAttribute("href")
+      }
+    })
+  }
+  window.onload = checkHREF
+</script>
