@@ -15,12 +15,20 @@
   {%- assign project_url = project.external_url -%}
   {%- assign external = true -%}
   {%- else -%}
+  
+  {%- if project.fordisplayonly -%}
   {%- assign project_url = "" -%}
+  {%- else -%}
+  {%- assign project_url = project.url | relative_url -%}
+  {%- endif -%}
+
   {%- assign external = false -%}
+
   {%- endif -%}
 
   {% include projects/project-card.html %}
 
+  {% endfor %}
   {% endfor %}
 
 </div>
