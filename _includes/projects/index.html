@@ -40,10 +40,10 @@
       if (alink.getAttribute("href") == "") {
         alink.removeAttribute("href")
         const fordisplayonly = alink.querySelector('.overlay')
-        fordisplayonly.onmouseover = function () {
+        alink.onmouseover = function () {
           fordisplayonly.style.opacity = '1'
         }
-        fordisplayonly.onmouseout = function () {
+        alink.onmouseout = function () {
           fordisplayonly.style.opacity = '0'
         }
       }
