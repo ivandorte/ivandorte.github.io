@@ -1,5 +1,5 @@
 ---
-name: Rieti gas network
+name: PDFs to Vector Data
 tools: [Python]
 image: "../docs/images/projects/p13.jpg"
 description: Simplified workflow for extracting vector layers from PDF utility maps.
