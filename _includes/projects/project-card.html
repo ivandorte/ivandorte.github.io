@@ -3,6 +3,14 @@
     {%- if project_img -%}
     <div class="inner">
       <img id="{{ project_id }}-img" class="card-img-top" src="{{ project_img }}" alt="{{ project_name }}" />
+      <div class="overlay">
+        <span class="text-right" style="pointer-events: none;">
+          <div class="badge badge-pill" style="background-color: black; color: white;">
+            <i class="fa fa-hand-point-up m-1"></i>
+            For display only
+          </div>
+        </span>
+      </div>
     </div>
     {%- endif -%}
     <div class="card-body">

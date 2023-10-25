@@ -39,6 +39,13 @@
     alinks.forEach((alink, index) => {
       if (alink.getAttribute("href") == "") {
         alink.removeAttribute("href")
+        const fordisplayonly = alink.querySelector('.overlay')
+        fordisplayonly.onmouseover = function () {
+          fordisplayonly.style.opacity = '1'
+        }
+        fordisplayonly.onmouseout = function () {
+          fordisplayonly.style.opacity = '0'
+        }
       }
     })
   }
