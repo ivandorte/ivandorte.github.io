@@ -15,11 +15,11 @@ Source: [Linkedin](https://www.linkedin.com/feed/update/urn:li:activity:70929941
 >
 > Please give a warm congratulations to this year's winners:
 >
-> {% include elements/highlight.html text="🥇 Kevin Lalli, <strong>Ivan D'Ortenzio</strong>, and David H. for their SatGPT project which >uses uses large language models (LLMs) to retrieve and generate satellite data! Check out the project here 👉 🐙 " %}[https://lnkd.in/>gefQgkrc](https://lnkd.in/gefQgkrc)
+> {% include elements/highlight.html text="🥇 Kevin Lalli, <strong>Ivan D'Ortenzio</strong>, and David H. for their SatGPT project which uses uses large language models (LLMs) to retrieve and generate satellite data! Check out the project here 👉 🐙 " %}[https://lnkd.in/>gefQgkrc](https://lnkd.in/gefQgkrc)
 >
 > 🥈 Junshen Tao for his AI-powered children’s story app! Learn about the project here 👉 🐙 https://lnkd.in/gb-mqQ4m
 >
-> {% include elements/highlight.html text="🥉 <strong>Ivan D'Ortenzio</strong> for his dashboard displaying the near real-time position of >any bus, tram, or train within Rome! Learn about the project here 👉 🐙 " %}[https://lnkd.in/g3-9UK26](https://lnkd.in/g3-9UK26)
+> {% include elements/highlight.html text="🥉 <strong>Ivan D'Ortenzio</strong> for his dashboard displaying the near real-time position of any bus, tram, or train within Rome! Learn about the project here 👉 🐙 " %}[https://lnkd.in/g3-9UK26](https://lnkd.in/g3-9UK26)
 >
 > Thank you to everyone that participated in this year’s Data App Contest! We’re proud to support the open-source Python community and
 > bring opportunities like these to our audience.
