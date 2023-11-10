@@ -32,12 +32,13 @@ $ git config --global core.editor <new-editor>
 
 DONE! Let's see how to add a SSH Key to your GitHub account!
 
-
 ## What is SSH?
 
 **SSH** (Secure Shell) is a network protocol for operating network services in a secure way over an unsecured network. 
 
 Setting up a SSH key is a priority for GitHub users so they can safely access public repositories and share their contributions with the open source community.
+
+{% include elements/local-video.html video="https://github.com/ivandorte/ivandorte.github.io/blob/main/docs/videos/posts/2023-11-01-github-ssh/01.webm?raw=true" caption="Contributing to open source projects..." %}
 
 #### Prerequisites
 
@@ -88,7 +89,7 @@ $ cat id_rsa.pub
 
 Head up to your GitHub account, navigate to Settings > SSH and GPG keys > New SSH key, copy & paste the content shown above then click `Add SSH key`.
 
-{% include elements/local-video.html video="https://github.com/ivandorte/ivandorte.github.io/blob/main/docs/videos/posts/2023-11-01-github-ssh.webm?raw=true" caption="Adding a SSH to your GitHub account" %}
+{% include elements/local-video.html video="https://github.com/ivandorte/ivandorte.github.io/blob/main/docs/videos/posts/2023-11-01-github-ssh/02.webm?raw=true" caption="Adding a SSH to your GitHub account" %}
 
 DONE!
 
