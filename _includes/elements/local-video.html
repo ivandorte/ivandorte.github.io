@@ -1,0 +1,7 @@
+<figure class="figure w-100">
+  <video src="{{ include.video }}" type="video/webm" class="figure-img img-fluid rounded"
+    alt="{{ include.alt | default: include.caption }}" controls></video>
+  {%- if include.caption -%}
+  <figcaption class="figure-caption text-center">{{ include.caption }}</figcaption>
+  {%- endif -%}
+</figure>
