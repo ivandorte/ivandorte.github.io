@@ -88,7 +88,7 @@ Where:
 - `SHARED_HOST` is the name of the shared folder in the host (ubuntu-project)
 - Modify `SHARED_HOST` to reflect the shared folder (host) name defined previously, or synced folder won't work.
 
-Vagrant uses a base image to quietly clone a virtual machine known as **box**. Specifying the box to use for your Vagrant environment is always the first step after creating a new Vagrantfile:
+Vagrant uses a base image, known as **box**, to quietly clone a virtual machine. Specifying the box to use for your Vagrant environment is always the first step after creating a new Vagrantfile:
 
 ```
 config.vm.box = "generic/ubuntu2204"
