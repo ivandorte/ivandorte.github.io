@@ -24,38 +24,37 @@ Vagrant can run on Windows, Linux, and Mac OS X, and supports popular desktop hy
 - **Windows 10 2004 or later**
 - [**Files and scripts**](https://github.com/ivandorte/ivandorte.github.io/raw/main/docs/_posts/files/2023-11-09-vagrant-vmware.7z)<br>
 Download, unzip and open a cmd inside the folder
-   
 
 ## Vagrant pre-configuration
 
 Open a cmd and install **vagrant-vmware-desktop** utility:
 
 ```
-vagrant plugin install vagrant-vmware-desktop
+$ vagrant plugin install vagrant-vmware-desktop
 ```
 
 Create a vagrant folder in your user profile:
 
 ```
-mkdir  "%USERPROFILE%\<vagrant_folder>"
+$ mkdir  "%USERPROFILE%\<vagrant_folder>"
 ```
 
 Where `<vagrant_folder>` is the name of the folder. For example:
 
 ```
-mkdir  "%USERPROFILE%\ubuntu-vagrant"
+$ mkdir  "%USERPROFILE%\ubuntu-vagrant"
 ```
 
 Create the shared folder:
 
 ```
-mkdir  "%USERPROFILE%\<shared_folder>"
+$ mkdir  "%USERPROFILE%\<shared_folder>"
 ```
 
 Where `<shared_folder>` is the name of the shared folder. For example:
 
 ```
-mkdir  "%USERPROFILE%\ubuntu-projects"
+$ mkdir  "%USERPROFILE%\ubuntu-projects"
 ```
 
 Download the [**Files and scripts**](https://github.com/ivandorte/ivandorte.github.io/raw/main/docs/_posts/files/2023-11-09-vagrant-vmware.7z) provided, unzip and open a cmd inside the folder.
@@ -73,7 +72,7 @@ xcopy /hievry .vscode "%USERPROFILE%\ubuntu-projects\.vscode"
 Then move to the vagrant folder:
 
 ```
-cd "%USERPROFILE%\ubuntu-vagrant"
+$ cd "%USERPROFILE%\ubuntu-vagrant"
 ```
 
 Before starting our VM, have a look at the **Vagrantfile** and modify the variables, especially:
@@ -113,7 +112,7 @@ To skip the execution of the script just comment out this line.
 Let's install the base box, i.e. Ubuntu 22.04:
 
 ```
-vagrant box add generic/ubuntu2204
+$ vagrant box add generic/ubuntu2204
 ```
 
 When prompted, choose **vmware_desktop**!
@@ -121,7 +120,7 @@ When prompted, choose **vmware_desktop**!
 With your Vagrantfile in place, you can now boot your first test environment by using the following command:
 
 ```
-vagrant up --provider vmware_desktop --provision
+$ vagrant up --provider vmware_desktop --provision
 ```
 
 {% include elements/local-video.html video="https://github.com/ivandorte/ivandorte.github.io/blob/main/docs/videos/posts/2023-11-09-vagrant-vmware/02.webm?raw=true" caption="Bringing up the VM..." %}
@@ -134,7 +133,7 @@ Where:
 To create shortcuts to start and stop commands, run `02-create-vm-shortcuts.ps1` via PowerShell:
 
 ```
-Powershell.exe -executionpolicy remotesigned -File 02-create-vm-shortcuts.ps1
+$ Powershell.exe -executionpolicy remotesigned -File 02-create-vm-shortcuts.ps1
 ```
 
 ## VS Code – SSH config
