@@ -98,7 +98,7 @@ Available boxes are hosted on the [HashiCorp's Vagrant Cloud box catalog](https:
 
 {% include elements/local-video.html video="https://github.com/ivandorte/ivandorte.github.io/blob/main/docs/videos/posts/2023-11-09-vagrant-vmware/01.webm?raw=true" caption="The box catalog" %}
 
-On the first run only [**provisioning**](https://developer.hashicorp.com/vagrant/docs/provisioning/basic_usage) is run:
+On the first run only, [**provisioning**](https://developer.hashicorp.com/vagrant/docs/provisioning/basic_usage) is run:
 
 ```
 config.vm.provision :shell, path: "python-install.sh", privileged: true
@@ -130,7 +130,7 @@ Where:
 - `--provider` flag defines which provider to run, i.e. vmware_desktop
 - `--provision` forces provisioning
 
-To create shortcuts to start and stop commands, run `02-create-vm-shortcuts.ps1` via PowerShell:
+(OPTIONAL) You can create desktop shortcuts to start and stop commands running `02-create-vm-shortcuts.ps1` via PowerShell:
 
 ```
 $ Powershell.exe -executionpolicy remotesigned -File 02-create-vm-shortcuts.ps1
