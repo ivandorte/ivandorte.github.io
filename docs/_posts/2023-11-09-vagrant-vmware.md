@@ -38,25 +38,25 @@ $ vagrant plugin install vagrant-vmware-desktop
 Create a vagrant folder in your user profile:
 
 ```
-$ mkdir  "%USERPROFILE%\<vagrant_folder>"
+$ md "%USERPROFILE%\<vagrant_folder>"
 ```
 
 Where `<vagrant_folder>` is the name of the folder. For example:
 
 ```
-$ mkdir  "%USERPROFILE%\ubuntu-vagrant"
+$ md "%USERPROFILE%\ubuntu-vagrant"
 ```
 
 Create the shared folder:
 
 ```
-$ mkdir  "%USERPROFILE%\<shared_folder>"
+$ md "%USERPROFILE%\<shared_folder>"
 ```
 
 Where `<shared_folder>` is the name of the shared folder. For example:
 
 ```
-$ mkdir  "%USERPROFILE%\ubuntu-projects"
+$ md "%USERPROFILE%\ubuntu-projects"
 ```
 
 Download the [**Files and scripts**](https://github.com/ivandorte/ivandorte.github.io/raw/main/docs/_posts/files/2023-11-09-vagrant-vmware.7z) provided, unzip and open a cmd inside the folder.
