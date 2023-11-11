@@ -17,13 +17,15 @@ Vagrant can run on Windows, Linux, and Mac OS X, and supports popular desktop hy
 
 #### Prerequisites
 
+- **[Virtualization (BIOS)](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)**
+- **[OpenSSH](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui)**
 - **[VMware Workstation Player](https://www.vmware.com/products/workstation-player.html)**
 - **[Vagrant](https://developer.hashicorp.com/vagrant/install?product_intent=vagrant)**
 - **[Vagrant VMware Utility](https://developer.hashicorp.com/vagrant/install/vmware)**
 - **[VS Code](https://code.visualstudio.com/)**
 - **Windows 10 2004 or later**
 - [**Files and scripts**](https://github.com/ivandorte/ivandorte.github.io/raw/main/docs/_posts/files/2023-11-09-vagrant-vmware.7z)<br>
-Download, unzip and open a cmd inside the folder
+Download, unzip and open a cmd inside the folder.
 
 ## Vagrant pre-configuration
 
@@ -85,7 +87,7 @@ SHARED_HOST="ubuntu-projects"
 Where:
 
 - `SHARED_UBU` is the name of the work directory (python-dev) in the guest we are going to sync with the shared folder in the host (ubuntu-projects). Name it as you wish.
-- `SHARED_HOST` is the name of the shared folder in the host (ubuntu-project)
+- `SHARED_HOST` is the name of the shared folder in the host (ubuntu-project).
 - Modify `SHARED_HOST` to reflect the shared folder (host) name defined previously, or synced folder won't work.
 
 Vagrant uses a base image, known as **box**, to quietly clone a virtual machine. Specifying the box to use for your Vagrant environment is always the first step after creating a new Vagrantfile:
@@ -127,8 +129,8 @@ $ vagrant up --provider vmware_desktop --provision
 
 Where:
 
-- `--provider` flag defines which provider to run, i.e. vmware_desktop
-- `--provision` forces provisioning
+- `--provider` flag defines which provider to run, i.e. vmware_desktop.
+- `--provision` forces provisioning.
 
 (OPTIONAL) You can create desktop shortcuts to start and stop commands running `02-create-vm-shortcuts.ps1` via PowerShell:
 
@@ -155,8 +157,6 @@ The following command output a valid configuration for an SSH config file to SSH
 - [autoDocstring (Nils Werner)](https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring)
 - [Ruff (Astral Software)](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff)
 - [intelliCode (Microsoft)](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
-- [MagicPython (MagicStack Inc.)](https://marketplace.visualstudio.com/items?itemName=magicstack.MagicPython)
-- [Better Comments (Aaron Bond)](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 
 ## Automated installation! :sunglasses:
 

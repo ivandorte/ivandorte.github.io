@@ -49,7 +49,7 @@ Setting up a SSH key is a priority for GitHub users so they can safely access pu
     $ sudo apt install git
     ```
 - **SSH**
-    * Windows: follow instructions **[here]**(https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui)
+    * Windows: [**follow instructions**](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui)
     * Gnu-Linux:<br>
     ```
     $ sudo apt install openssh-server
