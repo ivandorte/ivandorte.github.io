@@ -24,7 +24,7 @@ $ git config --global user.name <name>
 $ git config --global user.email <email>
 ```
 
-The flag `--global` set Git configuration values on global project level.
+The flag `--global` sets Git configuration values on global project level.
 
 Optionally you can specify a text `editor` to customize Git messages. Git uses the system one (e.g. nano) by default.
 
@@ -81,7 +81,7 @@ $ ssh-keygen -o -t rsa -C <email>
 
 Press enter to accept the default location. When prompted, type a password!
 
-Copy and paste the output of this command:
+Copy the output of this command:
 
 ```
 $ cat id_rsa.pub
