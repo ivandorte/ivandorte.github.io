@@ -20,25 +20,25 @@
 
 <!-- Initialize all tooltips and masonry layout -->
 <script>
-$(function () {
+  $(function () {
     $('[data-bs-toggle="tooltip"]').tooltip()
-})
-
-// init Masonry
-var grid = $('.grid')
-
-if (grid.attr("id") === "projectsIndex") {
-  // init Masonry after all images have loaded
-  grid.imagesLoaded(function () {
-    // move to 3 columns layout when the number of projects increases
-    if (this.images.length > 20) {
-      $('.col-md-6').addClass('col-md-4').removeClass('col-md-6')
-    }
-    grid.masonry()
   })
-} else {
-  grid.onload = grid.masonry({ 
-    horizontalOrder: true 
-  })
-}
+
+  // init Masonry
+  var grid = $('.grid')
+
+  if (grid.attr('id') === 'projectsIndex') {
+    // init Masonry after all images have loaded
+    grid.imagesLoaded(function () {
+      // move to 3 columns layout when the number of projects increases
+      if (this.images.length > 20) {
+        $('.col-md-6').addClass('col-md-4').removeClass('col-md-6')
+      }
+      grid.masonry()
+    })
+  } else {
+    grid.onload = grid.masonry({
+      horizontalOrder: true
+    })
+  }
 </script>
