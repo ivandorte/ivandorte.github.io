@@ -59,16 +59,16 @@ Where `<shared_folder>` is the name of the shared folder. For example:
 $ md "%USERPROFILE%\ubuntu-projects"
 ```
 
-Download the [**Files and scripts**](https://github.com/ivandorte/ivandorte.github.io/raw/main/docs/_posts/files/2023-11-09-vagrant-vmware.7z) provided, unzip and open a cmd inside the folder.
+Download the [**files and scripts**](https://github.com/ivandorte/ivandorte.github.io/raw/main/docs/_posts/files/2023-11-09-vagrant-vmware.7z) provided, unzip and open a cmd inside the folder.
 
 Copy `Vagrantfile`, `python-install.sh`, `vagrant-start.bat`, `vagrant-stop.bat` to the vagrant folder (ubuntu-vagrant), and `.vscode` to the shared folder (ubuntu-projects):
 
 ```
-copy Vagrantfile "%USERPROFILE%\ubuntu-vagrant"
-copy python-install.sh "%USERPROFILE%\ubuntu-vagrant"
-copy vagrant-start.bat "%USERPROFILE%\ubuntu-vagrant"
-copy vagrant-stop.bat "%USERPROFILE%\ubuntu-vagrant"
-xcopy /hievry .vscode "%USERPROFILE%\ubuntu-projects\.vscode"
+$ copy Vagrantfile "%USERPROFILE%\ubuntu-vagrant"
+$ copy python-install.sh "%USERPROFILE%\ubuntu-vagrant"
+$ copy vagrant-start.bat "%USERPROFILE%\ubuntu-vagrant"
+$ copy vagrant-stop.bat "%USERPROFILE%\ubuntu-vagrant"
+$ xcopy /hievry .vscode "%USERPROFILE%\ubuntu-projects\.vscode"
 ```
 
 Then move to the vagrant folder:
