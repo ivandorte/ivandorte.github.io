@@ -43,3 +43,18 @@ input::-webkit-search-cancel-button {
 video::-webkit-media-controls-volume-control-container {
   display: none;
 }
+
+#scrollTopBtn {
+  background-color: var(--fa-border-color);
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#scrollTopBtn:hover {
+  background-color: $primary;
+}
