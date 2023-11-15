@@ -10,7 +10,7 @@ tools:
     holoviews,
     protobuf,
     google.transit,
-    Panel,
+    Panel
   ]
 image: "../docs/images/projects/p11.jpg"
 description: Dashboard displaying the near real-time position of any bus, tram, or train (ATAC and Roma TPL operators) within the Metropolitan City of Rome.
