@@ -18,6 +18,6 @@ tools:
   ]
 image: "../docs/images/projects/p4.jpg"
 description: Collection of short geospatial scripts and more...
-order: 9
+order: 4
 external_url: https://github.com/ivandorte/python_gis
 ---

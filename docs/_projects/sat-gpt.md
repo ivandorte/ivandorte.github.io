@@ -23,7 +23,7 @@ tools:
   ]
 image: "../docs/images/projects/p13.jpg"
 description: SatGPT is an experimental project that uses LLMs to retrieve Sentinel 2/Landsat imagery based on the user's requested area and time of interest in natural language.
-order: 0
+order: 13
 ---
 
 # SatGPT

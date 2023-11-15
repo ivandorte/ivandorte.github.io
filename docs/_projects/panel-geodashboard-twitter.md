@@ -15,6 +15,6 @@ tools:
   ]
 image: "../docs/images/projects/p8.jpg"
 description: A Panel-based dashboard visualizing geotagged tweets with hvplot, Datashader and Echarts.
-order: 4
+order: 9
 external_url: https://github.com/ivandorte/panel-geodashboard-twitter
 ---
