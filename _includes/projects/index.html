@@ -1,6 +1,6 @@
 <div id="projectsIndex" class="grid row m-3 mt-5" style="margin: auto;">
 
-  {% assign sortedprojects = site.projects | sort:'order' %}
+  {% assign sortedprojects = site.projects | sort:'order' | reverse %}
 
   {% for project in sortedprojects %}
 

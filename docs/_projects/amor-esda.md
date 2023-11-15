@@ -12,7 +12,7 @@ tools:
     pysal,
     arcpy,
   ]
-image: "../docs/images/projects/p8.jpg"
+image: "../docs/images/projects/p6.jpg"
 description: Exploratory Spatial Data Analysis (ESDA) performed on historical human mobility data as part of the AMOR project.
 order: 7
 external_url: https://business.esa.int/projects/amor
