@@ -1,5 +1,5 @@
 ---
-name: [WIP] SatGPT revamp
+name: (WIP) SatGPT revamp
 tools:
   [
     Python,
