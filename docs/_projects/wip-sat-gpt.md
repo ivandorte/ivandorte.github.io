@@ -25,7 +25,16 @@ tools:
     holoviews
   ]
 image: "../docs/images/projects/p14.jpg"
-description: General UI/UX overhaul, implementation of the next generation chat interface for Panel and better integration of langchain-based custom tools for the agent. Testing alternative language models such as llama-2-70b-chat via together.ai/replicate, and new tools for raster data visualization (folium, ipyleaflet, TiTiler).
-fordisplayonly: true
+description: Working on SatGPT revamp :D
 order: 14
 ---
+
+# (WIP) SatGPT revamp
+
+- General UI/UX overhaul.
+- Implementation of the next generation chat interface for Panel
+- Better integration of langchain-based custom tools for the agent. 
+- Testing alternative language models such as llama-2-70b-chat via together.ai/replicate.
+- Testing new tools for raster data visualization (folium, ipyleaflet, TiTiler).
+
+{% include elements/figure.html image="../docs/images/projects/p14_1.jpg" caption="Llama 2 (image adapted from [Meta](https://about.fb.com/news/2023/07/llama-2/))" %}
