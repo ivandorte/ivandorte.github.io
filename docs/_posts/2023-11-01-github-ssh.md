@@ -45,7 +45,7 @@ Setting up a SSH key is mandatory for GitHub users so they can safely access pub
 #### Prerequisites
 
 - **Git**
-    * Windows: https://git-scm.com/
+    * Windows: [https://git-scm.com/](https://git-scm.com/)
     * Gnu-Linux:<br>
     ```
     $ sudo apt install git
