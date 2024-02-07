@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>ANNCSU - Firenze</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-hash@0.2.1/leaflet-hash.js"></script>
+    <script src="https://unpkg.com/protomaps-leaflet@1.24.2/dist/protomaps-leaflet.min.js"></script>
+    <script src="https://github.com/Zverik/Leaflet.LimitZoom/blob/master/Leaflet.LimitZoom.js"></script>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        .civici-table {
+            font-family: sans-serif;
+            -webkit-font-smoothing: antialiased;
+            width: auto;
+            overflow: auto;
+            display: block;
+        }
+
+        .civici-table td {
+            background-color: rgb(238, 238, 238);
+            padding: 2px 6px;
+            color: rgb(111, 111, 111);
+            border: 1px solid rgb(255, 255, 255);
+            border-collapse: collapse;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <div id='map'></div>
+    <script>
+
+        class CivicoSymbolizer {
+            draw(context, geom, z, feature) {
+                let pt = geom[0][0]
+                var fill = "darkslategray"
+
+                context.fillStyle = fill
+                context.strokeStyle = "transparent"
+                context.globalAlpha = 0.4
+                context.beginPath()
+                context.arc(pt.x, pt.y, 4, 0, 2 * Math.PI)
+                context.stroke()
+                context.fill()
+            }
+        }
+
+        class CivicoLabels {
+            place(layout, geom, feature) {
+                let pt = geom[0][0]
+
+                var font = "12px sans-serif"
+
+                var civico_label = feature.props.civico
+                var esp_label = feature.props.esp
+
+                if (esp_label) {
+                    civico_label = civico_label + "/" + esp_label;
+                }
+
+                layout.scratch.font = font
+                let metrics = layout.scratch.measureText(civico_label)
+                let width = metrics.width
+                let ascent = metrics.actualBoundingBoxAscent
+                let descent = metrics.actualBoundingBoxDescent
+                let bbox = { minX: pt.x - width / 2, minY: pt.y - ascent, maxX: pt.x + width / 2, maxY: pt.y + descent }
+
+                let draw = ctx => {
+                    ctx.font = font
+                    ctx.fillStyle = "darkslategray"
+                    ctx.strokeStyle = "white"
+                    ctx.strokeText(civico_label, 1, 1);
+                    ctx.fillText(civico_label, 1, 1)
+
+                }
+                return [{ anchor: pt, bboxes: [bbox], draw: draw }]
+            }
+        }
+
+        var minZoom = 17;
+        var maxZoom = 22;
+
+        var southWest = L.latLng(43.7261, 11.15112),
+            northEast = L.latLng(43.83542, 11.33737),
+            bounds = L.latLngBounds(southWest, northEast);
+
+        var map = L.map('map', {
+            maxBounds: bounds,
+            attributionControl: false,
+            zoomControl: false,
+            minZoom: minZoom,
+	        maxZoom: maxZoom
+        })
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            subdomains: 'abcd',
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            minZoom: minZoom,
+	        maxZoom: maxZoom
+        }).addTo(map);
+
+        let hash = new L.Hash(map)
+        if (!window.location.hash) map.setView(new L.LatLng(43.7874, 11.2499), minZoom)
+        var layer = protomapsL.leafletLayer({
+            url: './data/D612.pmtiles',
+            paint_rules: [{
+                dataLayer: "D612",
+                symbolizer: new CivicoSymbolizer()
+            }],
+            label_rules: [{
+                dataLayer: "D612",
+                symbolizer: new CivicoLabels(),
+                minzoom: 19
+            }]
+        })
+
+        layer.addTo(map)
+
+        // Popup
+        map.on('click', e => {
+            var features = layer.queryFeatures(e.latlng.lng, e.latlng.lat).entries().next()["value"][1]
+
+            var columns = ["Toponimo", "Civico", "Esponente"]
+            var table = document.createElement('table')
+            var header = table.createTHead();
+            var header_row = header.insertRow(0);
+            columns.forEach(function (item, index) {
+                var header_cell = header_row.insertCell(index);
+                header_cell.innerHTML = "<b>" + item + "</b>";
+            });
+
+            if (features && features.length) {
+
+                var body = table.createTBody()
+
+                for (let result of features) {
+                    var denomest = result.feature.props.denomest;
+                    var civico = result.feature.props.civico;
+                    var esp = result.feature.props.esp;
+
+                    if (typeof esp == 'undefined') {
+                        esp = "-";
+                    }
+
+                    row = body.insertRow(-1)
+                    row.insertCell(0).innerText = denomest
+                    row.insertCell(1).innerText = civico
+                    row.insertCell(2).innerText = esp
+                }
+
+                table.setAttribute("class", "civici-table");
+
+                var popup = L.popup()
+                    .setLatLng(e.latlng)
+                    .setContent(table)
+                    .openOn(map);
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
