@@ -17,8 +17,8 @@ tools:
     plotly,
     Bokeh,
   ]
-image: "../docs/images/projects/p5.jpg"
+image: "../docs/images/projects/p6.jpg"
 description: Repository with scripts and data used for the challenge.
-order: 5
+order: 6
 external_url: https://github.com/ivandorte/30DayMapChallenge_2021
 ---

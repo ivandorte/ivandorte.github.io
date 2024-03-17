@@ -16,8 +16,8 @@ tools:
     igraph,
     holoviz tools,
   ]
-image: "../docs/images/projects/p4.jpg"
+image: "../docs/images/projects/p5.jpg"
 description: Collection of short geospatial scripts and more...
-order: 4
+order: 5
 external_url: https://github.com/ivandorte/python_gis
 ---

@@ -1,9 +1,9 @@
 ---
 name: Monitoraggio vaccini Italia
 tools: [Python, scikit-learn, pandas, numpy, matplotlib, cartopy]
-image: "../docs/images/projects/p8.jpg"
+image: "../docs/images/projects/p9.jpg"
 description: Bivariate map of the association between vaccination rates and COVID-19 deaths in EU27 - Monitoraggio vaccini Italia.
-order: 8
+order: 9
 ---
 
 # What was "Monitoraggio vaccini Italia"?

@@ -21,9 +21,9 @@ tools:
     hvplot,
     holoviews,
   ]
-image: "../docs/images/projects/p13.jpg"
+image: "../docs/images/projects/p14.jpg"
 description: SatGPT is an experimental project that uses LLMs to retrieve Sentinel 2/Landsat imagery based on the user's requested area and time of interest in natural language.
-order: 13
+order: 14
 ---
 
 # SatGPT
