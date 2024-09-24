@@ -162,6 +162,16 @@ The following command output a valid configuration for an SSH config file to SSH
 
 You can lazily execute all the steps above by running the `01-vagrant-install.bat`! :D
 
+
+## "HGFS issue after updating kernel drivers"
+
+- Repair **[Vagrant VMware Utility](https://developer.hashicorp.com/vagrant/install/vmware)** installation.
+- Reinstall **Vagrant VMware provider plugin**:
+
+```
+vagrant plugin install vagrant-vmware-desktop
+```
+
 ## Credits
 
 [enricocid](https://github.com/enricocid)
