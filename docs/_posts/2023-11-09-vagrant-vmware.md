@@ -19,7 +19,7 @@ Vagrant can run on Windows, Linux, and Mac OS X, and supports popular desktop hy
 
 - **[Virtualization (BIOS)](https://support.microsoft.com/en-us/windows/enable-virtualization-on-windows-11-pcs-c5578302-6e43-4b4b-a449-8ced115f58e1)**
 - **[OpenSSH](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui)**
-- **[VMware Workstation Player](https://www.vmware.com/products/workstation-player.html)**
+- **[VMware Workstation Player](https://www.vmware.com/products/workstation-player.html)** - **[Alt](https://softwareupdate.vmware.com/cds/vmw-desktop/player/)**
 - **[Vagrant](https://developer.hashicorp.com/vagrant/install?product_intent=vagrant)**
 - **[Vagrant VMware Utility](https://developer.hashicorp.com/vagrant/install/vmware)**
 - **[VS Code](https://code.visualstudio.com/)**
